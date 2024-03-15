@@ -8,6 +8,10 @@
             //Area(2);
             //stringtrim(" fatime kerimli");
             //String("Baki Dovlet Uni");
+            Console.WriteLine(Max(12,54,22,222));
+            Polindrom(1221);
+            
+           
         }
         //public static bool yoxlama(string a ,char b)
         //{
@@ -89,6 +93,43 @@
         //    }
         //}
 
+     public static int Max(params int[] eded)
+        {
+            int max = eded[0];
+            for(int i = 0; i < eded.Length; i++)
+            {
+                if (eded[i] > eded[0])
+                {
+                    max = eded[i];
+                }
+            }
+            return max;
+        }
+     
 
+
+      public static void Polindrom(int eded)
+        { //1221
+            int tersi = 0;
+            int sonEded = eded;
+            int qaliq = 0;
+            while (eded != 0)
+            {
+                qaliq = eded % 10;
+                tersi=tersi*10+qaliq;
+                eded = eded - qaliq;
+                eded = eded / 10;
+            }
+            Console.WriteLine(tersi);
+            if (sonEded == tersi)
+            {
+                Console.WriteLine("palindromdur");
+            }
+            else
+            {
+                Console.WriteLine("palindrom deyil");
+            }
+
+        }
     }
 }
